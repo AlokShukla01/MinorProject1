@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ AI Text Detector</h1>
+            <nav>
+                <button class="tab active" onclick="showTab('detector')">Detector</button>
+                <button class="tab" onclick="showTab('history')">History</button>
+            </nav>
+        </header>
+
+        <!-- Detector Section -->
+        <section id="detector" class="tab-content active">
+            <p>Paste text below and analyze if it's AI-generated or human-written:</p>
+            <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+            <button onclick="analyzeText()">🚀 Analyze</button>
+
+            <!-- Loader -->
+            <div id="loader" class="loader" style="display:none;"></div>
+
+            <!-- Result Section -->
+            <div id="resultBox" style="display:none;">
+                <h3>Result:</h3>
+                <div class="gauge">
+                    <svg>
+            <circle cx="80" cy="80" r="70"></circle>
+            <circle id="gaugeCircle" cx="80" cy="80" r="70"></circle>
+          </svg>
+                    <div class="gauge-text" id="confidenceText">0%</div>
+                </div>
+                <p id="resultLabel"></p>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="tab-content">
+            <h3>🗂️ History</h3>
+            <ul id="historyList"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
